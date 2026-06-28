@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Registro de Estudiantes</h1>
+    <p>Formulario para agregar estudiantes y visualizar el resumen de notas.</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section" aria-labelledby="form-title">
+      <h2 id="form-title">Agregar estudiante</h2>
+
+      <form id="student-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana">
+          </div>
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Ej: Vargas Soto">
+          </div>
+
+          <div class="form-group">
+            <label for="nota">Nota</label>
+            <input type="number" id="nota" name="nota" min="0" max="100" placeholder="0 - 100">
+          </div>
+        </div>
+
+        <p id="message" class="message" role="alert" aria-live="polite"></p>
+
+        <button type="submit" class="submit-button">Agregar estudiante</button>
+      </form>
+    </section>
+
+    <section class="table-section" aria-labelledby="table-title">
+      <h2 id="table-title">Lista de estudiantes</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody id="students-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="summary-title">
+      <h2 id="summary-title">Resumen de notas</h2>
+
+      <dl class="summary-grid">
+        <div>
+          <dt>Mayor nota</dt>
+          <dd id="highest-student"></dd>
+        </div>
+
+        <div>
+          <dt>Promedio</dt>
+          <dd id="average-grade"></dd>
+        </div>
+
+        <div>
+          <dt>Nota más baja</dt>
+          <dd id="lowest-grade"></dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Programa desarrollado por Joseph Gutierrez.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
